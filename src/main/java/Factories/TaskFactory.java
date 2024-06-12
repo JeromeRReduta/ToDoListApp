@@ -10,5 +10,5 @@ public interface TaskFactory {
         return createWithStatus(name, false);
     }
 
-    final static TaskFactory DEFAULT = Task::new;
+    TaskFactory DEFAULT = Task::new;
 }

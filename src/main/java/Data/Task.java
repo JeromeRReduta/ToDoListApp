@@ -1,5 +1,7 @@
 package Data;
 
+import java.util.Objects;
+
 public final class Task {
 
     private final String name;
@@ -31,5 +33,17 @@ public final class Task {
     public String toString() {
         String checkbox = isDone ? "[x]" : "[ ]";
         return checkbox + " " + name;
+    }
+
+    // TODO: TEST THIS
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) {
+            return true;
+        }
+        else if (other instanceof Task otherTask) {
+            return Objects.equals(name, otherTask.name) && isDone == otherTask.isDone;
+        }
+        return false;
     }
 }

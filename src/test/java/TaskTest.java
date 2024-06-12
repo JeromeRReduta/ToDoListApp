@@ -28,6 +28,10 @@ public class TaskTest {
         assertFalse(testTask.isDone());
 
         assertEquals("[ ] Test task", testTask.toString());
+
+        Task finishedTask = TaskFactory.DEFAULT.createWithStatus("thing", true);
+
+        assertEquals("[x] thing", finishedTask.toString());
     }
 
 }
